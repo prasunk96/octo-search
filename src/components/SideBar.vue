@@ -53,6 +53,7 @@ export default {
 <style>
 .sidebar {
     height: inherit;
+    /* max-width: 350px; */
     padding: 10px;
     background: var(--mustard-yellow);
     border-right: 1px solid var(--some-grey-faded);
@@ -78,11 +79,11 @@ export default {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    margin-bottom: 1.5rem;
-    border: 0.5rem solid var(--navy-blue);
+    margin-bottom: 1rem;
+    border: 0.3rem solid var(--navy-blue);
     border-radius: 100%;
-    width: 150px;
-    height: 150px;
+    width: clamp(100px, 5vw, 150px);
+    height: clamp(100px, 5vh, 150px);
 }
 
 .profileImage img {
@@ -103,7 +104,7 @@ export default {
 .frostMirrorCard {
     background: var(--navy-blue-faded);
     color: var(--just-white);
-    margin: 10px 0px;
+    margin: 5px 0px;
     border-radius: 4px;
     backdrop-filter: blur(5px);
     padding: 15px 5px;
@@ -116,23 +117,23 @@ export default {
 }
 
 .count {
-    font-size: clamp(24px, 3vw, 30px) !important;
+    font-size: clamp(20px, 2vw, 24px) !important;
     margin: 0px;
 }
 
 .fullName {
-    font-size: clamp(24px, 3vw, 30px);
+    font-size: clamp(16px, 1vw, 20px);
     font-weight: 500;
 }
 
 .fullName h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: clamp(24px, 2vw, 24px);
+    margin-bottom: 5px;
     font-weight: 600;
 }
 
 .userName a {
-    font-size: 1rem;
+    font-size: clamp(16px, 1vw, 20px);;
     font-weight: 500;
     text-decoration: none;
     color: var(--anchor-color);
@@ -145,6 +146,6 @@ export default {
 }
 
 .margin {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 </style>
