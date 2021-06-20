@@ -1,12 +1,15 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
 import moment from 'moment';
+import { router } from '../routes/router';
 
 export const store = createStore({
     state: {
         userProfile: {},
         userRepos: [],
-        error: {}
+        error: {},
+        currentSearchedUser: '',
+        isLoading: false
     },
     mutations: {
         UserProfile (state, data) {
@@ -17,6 +20,12 @@ export const store = createStore({
         },
         error (state, error) {
             state.error = error;
+        },
+        currentSearchedUser (state, username) {
+            state.currentSearchedUser = username;
+        },
+        isLoading (state, value) {
+            state.isLoading = value;
         }
     },
     getters: {
@@ -31,11 +40,12 @@ export const store = createStore({
         following: state => state.userProfile.following,
         html_url: state => state.userProfile.html_url,
         repos_url: state => state.userProfile.repos_url,
-        repos: state => state.userRepos
+        repos: state => state.userRepos,
+        currentUser: state => state.currentSearchedUser
     },
     actions: {
-        fetchUserProfile ({ dispatch, commit }) {
-            const url = 'https://api.github.com/users/prasunk96';
+        fetchUserProfile ({ dispatch, commit }, username) {
+            const url = `https://api.github.com/users/${username.username}`;
             axios.get(url).then((res) => {
                 commit('UserProfile', res.data);
                 const reposUrl = res.data.repos_url;
@@ -46,6 +56,9 @@ export const store = createStore({
                 console.log(err);
                 commit('error', err);
             })
+        },
+        setCurrentSearchedUser ({ commit }, username) {
+            commit('currentSearchedUser', username)
         },
         cleanUserReposData ({ commit }, repos) {
             const cleanedRepoData = repos.map(item => {
@@ -61,6 +74,11 @@ export const store = createStore({
                 }
             });
             commit('userRepos', cleanedRepoData);
+            commit('isLoading', false);
+        },
+        handleLoadDashboard({ commit, state }) {
+            commit('isLoading', true);
+            router.push({ name: 'dashboard', params: { username: state.currentSearchedUser } });
         }
     }
 })

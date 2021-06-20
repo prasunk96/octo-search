@@ -1,5 +1,6 @@
 <template>
-    <div class="dadhBoardContainer">
+  <Loader v-if="isLoading" />
+    <div v-else class="dadhBoardContainer">
         <SideBar />
         <MainBody />
     </div>
@@ -8,15 +9,17 @@
 import SideBar from '../components/SideBar.vue';
 import MainBody from '../components/MainBody.vue';
 import { mapActions, mapState } from "vuex";
+import Loader from '../components/loader.vue';
 
 export default {
     components: {
         SideBar,
-        MainBody
+        MainBody,
+        Loader
     },
   computed: {
     ...mapState([
-      'userProfile'
+      'isLoading'
     ])
   },
   methods: {
@@ -25,7 +28,7 @@ export default {
     ])
   },
   mounted() {
-    this.fetchUserProfile();
+    this.fetchUserProfile(this.$route.params);
   }
 }
 </script>

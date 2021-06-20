@@ -1,15 +1,11 @@
 <template>
-  <OctoDashboard />
+  <router-view></router-view>
 </template>
 
 <script>
-import OctoDashboard from './components/Dashboard.vue';
 
 export default {
   name: 'App',
-  components: {
-    OctoDashboard
-  }
 }
 </script>
 
@@ -30,6 +26,7 @@ body {
 
 * {
   box-sizing: border-box;
+  transition: all 300ms;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   --anchor-color: #000dffed;
   --navy-blue-faded: #14213de5;
   --mustard-yellow: #FCA311;
+  --mustar-yellow-other: #fca311d6;
   --some-grey: #E5E5E5;
   --some-grey-faded: #e5e5e51b;
   --just-white: #FFFFFF;
