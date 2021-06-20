@@ -1,5 +1,7 @@
 # octo-search
 
+Demo: https://octo-search.netlify.app/
+
 ## Project setup
 ```
 npm install
