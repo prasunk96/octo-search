@@ -30,6 +30,15 @@
                 <p>FOLLOWING</p>
             </div>
         </div>
+        <div class="buildWith">
+            <h3>Built with</h3>
+            <ul>
+                <li><a href="https://v3.vuejs.org/guide/introduction.html" target="_blank" rel="noopener noreferrer">Vue</a></li>
+                <li><a href="https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api" target="_blank" rel="noopener noreferrer">GitHub API</a></li>
+                <li><a href="https://vuex.vuejs.org/guide/" target="_blank" rel="noopener noreferrer">Vuex</a></li>
+                <li><a href="https://router.vuejs.org/guide/#html" target="_blank" rel="noopener noreferrer">Vue Router</a></li>
+            </ul>
+        </div>
     </section>
 </template>
 <script>
@@ -52,8 +61,7 @@ export default {
 </script>
 <style>
 .sidebar {
-    height: inherit;
-    /* max-width: 350px; */
+    height: 100vh;
     padding: 10px;
     background: var(--mustard-yellow);
     border-right: 1px solid var(--some-grey-faded);
@@ -82,8 +90,8 @@ export default {
     margin-bottom: 1rem;
     border: 0.3rem solid var(--navy-blue);
     border-radius: 100%;
-    width: clamp(100px, 5vw, 150px);
-    height: clamp(100px, 5vh, 150px);
+    width: clamp(150px, 5vw, 200px);
+    height: clamp(150px, 5vh, 200px);
 }
 
 .profileImage img {
@@ -147,5 +155,45 @@ export default {
 
 .margin {
     margin-bottom: 5px;
+}
+
+.buildWith {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buildWith h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.buildWith ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.buildWith ul li {
+    margin-bottom: 5px;
+    color: var(--some-grey);
+}
+
+.buildWith ul li a {
+    font-size: clamp(16px, 1vw, 20px);;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--anchor-color);
+    transition: all 0.2s ease-in-out 0s;
+    font-family: var(--font-mono);
+}
+
+.buildWith ul li a:hover {
+    text-decoration: underline;
 }
 </style>

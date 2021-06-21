@@ -99,4 +99,34 @@ export default {
 .searchUserButton:hover {
     background: var(--mustar-yellow-other);
 }
+
+@media (max-width: 767px) {
+    .inputContianer {
+        width: 250px;
+        height: 40px;
+    }
+    .logo img {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+        margin: 0px;
+        font-weight: 600px;
+        color: var(--mustard-yellow);
+    }
+
+    .serchUserInput {
+        flex: 1;
+        flex-basis: 80%;
+        font-size: clamp(12px, 2vw, 16px);
+    }
+
+    .searchUserButton {
+        height: inherit;
+        flex-basis: 20%;
+    }
+}
 </style>

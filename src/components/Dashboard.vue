@@ -39,4 +39,25 @@ export default {
     background: var(--navy-blue);
     height: 100vh;
 }
+
+@media (min-width: 320px) {
+  .dadhBoardContainer {
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .dadhBoardContainer {
+      grid-template-columns: 4fr 8fr;
+      height: 100vh;
+  }
+}
+
+@media (min-width: 1024px) {
+    .dadhBoardContainer {
+      grid-template-columns: 3fr 9fr;
+      height: 100vh;
+  }
+}
 </style>

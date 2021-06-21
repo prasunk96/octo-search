@@ -18,10 +18,9 @@ export default {
 </script>
 <style>
 .mainBody {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     overflow: scroll;
-    overflow-x: hidden;
     padding: 15px;
     background: var(--navy-blue);
     display: flex;
@@ -30,5 +29,26 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+@media (min-width: 320px) {
+    .mainBody {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+@media (min-width: 768px) {
+    .mainBody {
+        height: 100vh;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}
+@media (min-width: 1024px) {
+    .mainBody {
+        height: 100vh;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 }
 </style>

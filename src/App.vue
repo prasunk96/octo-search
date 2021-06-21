@@ -24,6 +24,12 @@ body {
   widows: 100%;
 }
 
+@media (min-width: 320px) {
+  body {
+    overflow: auto;
+  }
+}
+
 * {
   box-sizing: border-box;
   transition: all 300ms;

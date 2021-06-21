@@ -11,7 +11,6 @@
       <div>{{ repo.size }} KB</div>
       <div class="transitionClass" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
         <a :href="repo.url" target="_blank" rel="noopener noreferrer">
-          <!-- <img :src="newTabSVG" /> -->
           <svg style="width:20px;height:20px;" viewBox="0 0 24 24">
             <path
                 class="transitionClass"
@@ -127,6 +126,24 @@ export default {
 
 .transitionClass {
     transition: all 200ms;
+}
+
+@media (min-width: 320px) {
+  .repoCard {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .repoCard {
+    flex-basis: 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .repoCard {
+    flex-basis: 30%;
+  }
 }
 
 </style>
