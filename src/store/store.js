@@ -45,6 +45,7 @@ export const store = createStore({
     },
     actions: {
         fetchUserProfile ({ dispatch, commit }, username) {
+            commit('isLoading', true);
             const url = `https://api.github.com/users/${username.username}`;
             axios.get(url).then((res) => {
                 commit('UserProfile', res.data);

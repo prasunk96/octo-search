@@ -35,6 +35,28 @@ body {
   transition: all 300ms;
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #fca311 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background:transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #fca311;
+    border-radius: 10px;
+    border: none;
+  }
+
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0px;
     margin-bottom: 1rem;

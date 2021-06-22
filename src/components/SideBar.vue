@@ -13,9 +13,9 @@
                 </a>
             </h2>
         </div>
-        <div class="sidebarItem margin">{{ company }}</div>
-        <div class="sidebarItem margin">{{ location }}</div>
-        <div class="sidebarItem margin">{{ joined }}</div>
+        <div class="sidebarItem margin" style="font-size: 14px;">{{ company }}</div>
+        <div class="sidebarItem margin" style="font-size: 14px;">{{ location }}</div>
+        <div class="sidebarItem margin" style="font-size: 14px;">{{ joined }}</div>
         <div class="gitHubDetails">
             <div class="sidebarItem frostMirrorCard">
                 <p class="count">{{ repositoriesCount }}</p>
@@ -29,15 +29,6 @@
                 <p class="count">{{ following }}</p>
                 <p>FOLLOWING</p>
             </div>
-        </div>
-        <div class="buildWith">
-            <h3>Built with</h3>
-            <ul>
-                <li><a href="https://v3.vuejs.org/guide/introduction.html" target="_blank" rel="noopener noreferrer">Vue</a></li>
-                <li><a href="https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api" target="_blank" rel="noopener noreferrer">GitHub API</a></li>
-                <li><a href="https://vuex.vuejs.org/guide/" target="_blank" rel="noopener noreferrer">Vuex</a></li>
-                <li><a href="https://router.vuejs.org/guide/#html" target="_blank" rel="noopener noreferrer">Vue Router</a></li>
-            </ul>
         </div>
     </section>
 </template>
@@ -70,6 +61,7 @@ export default {
     justify-content: flex-start;
     flex-direction: column;
     color: var(--navy-blue);
+    overflow: hidden;
 }
 
 .sidebarItem {
@@ -90,8 +82,8 @@ export default {
     margin-bottom: 1rem;
     border: 0.3rem solid var(--navy-blue);
     border-radius: 100%;
-    width: clamp(150px, 5vw, 200px);
-    height: clamp(150px, 5vh, 200px);
+    width: 100px;
+    height: 100px;
 }
 
 .profileImage img {
@@ -115,33 +107,32 @@ export default {
     margin: 5px 0px;
     border-radius: 4px;
     backdrop-filter: blur(5px);
-    padding: 15px 5px;
+    padding: 10px 5px;
 }
 
 .frostMirrorCard p {
     padding: 0px;
     margin-bottom: 0px;
-    font-size: clamp(12px, 1vw, 16px);
+    font-size: 12px;
 }
 
 .count {
-    font-size: clamp(20px, 2vw, 24px) !important;
+    font-size: 18px !important;
     margin: 0px;
 }
 
 .fullName {
-    font-size: clamp(16px, 1vw, 20px);
     font-weight: 500;
 }
 
 .fullName h1 {
-    font-size: clamp(24px, 2vw, 24px);
-    margin-bottom: 5px;
+    font-size: 18px;
+    margin-bottom: 0px;
     font-weight: 600;
 }
 
 .userName a {
-    font-size: clamp(16px, 1vw, 20px);;
+    font-size: 16px;
     font-weight: 500;
     text-decoration: none;
     color: var(--anchor-color);
@@ -155,45 +146,5 @@ export default {
 
 .margin {
     margin-bottom: 5px;
-}
-
-.buildWith {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.buildWith h3 {
-    margin: 0px;
-    padding: 0px;
-}
-
-.buildWith ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px;
-}
-
-.buildWith ul li {
-    margin-bottom: 5px;
-    color: var(--some-grey);
-}
-
-.buildWith ul li a {
-    font-size: clamp(16px, 1vw, 20px);;
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--anchor-color);
-    transition: all 0.2s ease-in-out 0s;
-    font-family: var(--font-mono);
-}
-
-.buildWith ul li a:hover {
-    text-decoration: underline;
 }
 </style>
